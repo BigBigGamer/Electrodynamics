@@ -1,0 +1,120 @@
+%!TEX root = ../Electrodynamics.tex
+
+\subsection{Гармонические волны в линиях передачи. Выражение для векторного потенциала. Дифференциальное уравнение для
+поперечной волновой функции $\psi(\vec{r_{\perp}})$. Понятия продольного и поперечного волнового числа. Выражения для
+полей ТЕ, ТМ, ТЕМ. Импедансная связь между поперечными компонентаит электрического и магнитного полей и понятие
+поперечного волнового сопротивления}
+
+Линия передач - это любая цилиндрическая система. В них различают продольное $z$ и поперечное $\vec{r_{\perp}} = r_{\perp}(r,\theta)$ направление. При описании
+таких систем проще использовать векторный потенциал $\vec{A}$, который должен удовлетворять уравнению Гельмгольца (для амплитуд):
+\begin{align*}
+  &\Delta \vec{A^e} + k^2 \vec{A^e} = -\frac{4 \pi \mu}{c} \vec{j^e}  =0 \\
+  &\vec{B} = rot \vec{A^e}
+  \label{eq:1}
+\end{align*}
+0 потому что случай, где нет сторонних источников. Запишем поля в ЛП, когда волна бежит вдоль оси $Oz$:
+\begin{equation}
+  \vec{E}(\vec{r}_{\perp},z,\theta) = \vec{E_0}(\vec{r}_{\perp}) e^{i(wt-hz)},
+  \label{eq:2}
+\end{equation}
+где h - \textbf{продольное волновое число} (постоянная распространения). Реальное поля в таком случае записывается как:
+\begin{equation}
+  E_{R_x} = Re(E_x) = |E_x(\vec{r}_{\perp})|\cos (wt-hz + \varphi(\vec{r}_{\perp}))
+  \label{eq:3}
+\end{equation}
+Запишем веторный потенциал в следующем виде:
+\begin{equation}
+  \vec{A^e} = \psi^e(\vec{r}_{\perp})e^{-ihz}\vec{z_0},
+  \label{eq:4}
+\end{equation}
+где $\psi^e(\vec{r}_{\perp})$ - \textbf{поперечная волновая функция}. Запишем теперь поля $\vec{E}$ и $\vec{H}$ через
+$\psi^e(\vec{r}_{\perp})$. Вспомним выражение полей через векторный потенциал:
+\begin{align*}
+  &\vec{H} = \frac{1}{\mu}rot \vec{A^e}\\
+  &\vec{E} = -\nabla \varphi - \frac{1}{c}\frac{\partial\vec{A^e}}{\partial t} = \frac{1}{ik_0\varepsilon\mu}(\nabla div + k^2)\vec{A^e},
+  \label{eq:5}
+\end{align*} 
+где $k = \frac{w}{c}\sqrt{\varepsilon\mu}, k_0 = \frac{w}{c}$. При подстановке выражения для $\vec{A^e}$, для компонент
+векторов в случае \textbf{TM} - волны получим(надо расписать такие вещи как $div(\vec{A^e}),~ \nabla div(\vec{A^e}),~rot \vec{A^e}$):
+\begin{align*}
+  &E_z = \frac{\varkappa^2}{ik_0\varepsilon\mu} \psi^e(\vec{r}_{\perp})\cdot e^{i(wt-hz)}\\
+  &\vec{E_{\perp}} = -\frac{h}{k_0\varepsilon\mu}\nabla_{\perp} \psi^e(\vec{r}_{\perp})\cdot e^{i(wt-hz)}\\
+  &\vec{H_{\perp}} = \frac{1}{\mu}[\nabla_{\perp} \psi^e(\vec{r}_{\perp})\times\vec{z_0}]\cdot e^{i(wt-hz)}\\
+  &H_z = 0
+\end{align*}
+\textbf{ТМ-волна} - поперечная магнитная волна (Магнитное поле имеет только поперечную компоненту. Поле $\vec{E}$ имеет и поперечное и
+продольное направление). 
+
+Потенциал $\vec{A^e}$, при любой зависимости от времени, должен удовлетворять волновому уравнению:
+\begin{equation}
+  \Delta \vec{A^e} - \frac{\varepsilon\mu}{c^2} \frac{\partial^2\vec{A^e}}{\partial t^2} = 0
+\end{equation}
+В нашем случае, когда векторный потенциал имеет вид $\vec{A^e} = \psi^e(\vec{r}_{\perp})e^{-ihz}\vec{z_0}$, для
+гармонических полей справедливы следующие переходы:
+\begin{equation}
+  \frac{\partial}{\partial t} \Rightarrow iw,~ \Delta \vec{A^e} + k^2 \vec{A^e} =0,~ k^2 = \frac{w^2}{c^2}\varepsilon\mu
+\end{equation}
+Рассмотри для $z$-компоненты:
+\begin{equation}
+  \Delta A^e_z + k^2 A^e_z =0,~ \Delta = \Delta_{\perp} + \frac{\partial^2}{\partial z^2}
+\end{equation}
+\begin{equation}
+  \frac{\partial^2}{\partial z^2} \Rightarrow -h^2,~ \text{т.к.} A^e_z = \psi^e(\vec{r}_{\perp})e^{-ihz}
+\end{equation}
+\begin{equation}
+  \Delta_{\perp}\psi^e+\underbrace{(k^2-h^2)}_{\varkappa^2}\psi^e=0
+\end{equation}
+\begin{equation}
+  \Delta_{\perp}\psi^e+\varkappa^2\psi^e=0
+\end{equation}
+$\varkappa^2$ - \textbf{поперечное волновое число}. Если поле удовлетворяет уравнению выше, то такое поле удоветворяет
+уравнениям Максвелла.
+
+Аналогично сделаем для \textbf{ТЕ} - волны.
+
+\textbf{ТЕ-волна} - поперечная электрическая волна (Электрическое поле имеет только поперечную компоненту. Магнитное поле имеет и поперечное и
+продольное направление). По принципу двойственности производим замены:
+\begin{equation}
+  \vec{E}\rightarrow\vec{H},~ \vec{H}\rightarrow-\vec{E},~ \varepsilon \leftrightarrow \mu 
+\end{equation}
+\begin{align*}
+  &H_z = \frac{\varkappa^2}{ik_0\varepsilon\mu} \psi^m(\vec{r}_{\perp})\cdot e^{i(wt-hz)}\\
+  &\vec{H_{\perp}} = -\frac{h}{k_0\varepsilon\mu}\nabla_{\perp} \psi^m(\vec{r}_{\perp})\cdot e^{i(wt-hz)}\\
+  &\vec{E_{\perp}} = -\frac{1}{\mu}[\nabla_{\perp} \psi^m(\vec{r}_{\perp})\times\vec{z_0}]\cdot e^{i(wt-hz)}\\
+  &E_z = 0
+\end{align*}
+Вообще говоря, $\psi^e$ и $\psi^m$ могут быть различными, поэтому выше вместо $\psi^e$ записано $\psi^m$ . Аналогично
+для $\psi^m$ требуется выполнение:
+\begin{equation}
+  \Delta_{\perp}\psi^m+\varkappa^2\psi^m=0
+\end{equation}
+ТЕ, ТМ волны - это решения уравнений Максвелла. однак может быть еще один тип решений - \textbf{ТЕМ} - волны.
+Рассмотрим случай $\varkappa = 0,~ h=k$:
+\begin{align*}
+  &H_z = E_z = 0 \\
+  &\vec{E_{\perp}} = -\frac{1}{\sqrt{\varepsilon\mu}}\nabla_{\perp} \psi\cdot e^{i(wt-kz)}\\
+  &\vec{H_{\perp}} = \frac{1}{\mu}[\nabla_{\perp} \psi\times\vec{z_0}]\cdot e^{i(wt-kz)}\\
+  &\Delta_{\perp}\psi=0
+\end{align*}
+\textbf{ТЕM-волна} - чисто поперечная волна (Электрическое поле имеет только поперечную компоненту, как и магнитное).
+
+Что имеем в итоге:
+\begin{itemize}
+  \item Поля выражаются через поперечную волновую функцию
+  \item Продольные компоненты полей пропорциональны $\psi$
+  \item Поперечные компоненты полей пропорциональны $\nabla_{\perp} \psi$
+\end{itemize}
+Т.е. если заданы $\psi^e,\psi^m$, то можно полностью найти поля. Из формул также видно следующее соотношение:
+\begin{align*}
+  \vec{E}_{\perp} = \eta_{\perp \text{в}}[\vec{H}_{\perp}\times \vec{z_0}] ,
+\end{align*}
+где $\eta_{\perp \text{в}}$  - \textbf{поперечное волновое сопротивление} - отношение между поперечными компонентами полей в
+бегущей волне $\eta_{\perp \text{в}} = \frac{E_{\perp}}{H_{\perp}}$.
+Для раличных типов волн записывается как:
+\begin{align*}
+  \text{ТЕ(+),ТМ(-) - волны: }&\eta_{\perp \text{в}} = \sqrt{\frac{\mu}{\varepsilon}}\left(\frac{k}{h}\right)^{\pm1}\\
+  \text{ТЕМ - волны: }&\eta_{\perp \text{в}} = \sqrt{\frac{\mu}{\varepsilon}}
+\end{align*}
+Заметим, что в бегущей волне поля зависят от координат, а их отношение - $\eta_{\perp \text{в}}$ - нет. В стоячей волне
+это не так.
+

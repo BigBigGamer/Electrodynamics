@@ -8,24 +8,10 @@
 \tableofcontents
 
 \newpage
-\section{Билет 1}
-\input{tasks/task1.tex}
-\section{Билет 2}
-\input{tasks/task2.tex}
-\section{Билет 3}
-\input{tasks/task3.tex}
-\section{Билет 4}
-\input{tasks/task4.tex}
-\section{Билет 5}
-\section{Билет 6}
-\section{Билет 7}
-\section{Билет 8}
-\section{Билет 9}
-\input{tasks/task9.tex}
-\section{Билет 10}
-\section{Билет 11}
-\section{Билет 12}
-\section{Билет 13}
+\foreach \x in {1,...,13}{
+    \newpage \section{Билет \x}
+    \input{tasks/task\x.tex}
+}
 
 
 \end{document}

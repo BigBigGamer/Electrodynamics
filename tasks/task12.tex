@@ -76,3 +76,61 @@ $-\Rot{\Rot{\vec{A}}}$ представляется в виде:
 \begin{equation}
     w_p = \frac{k_p c}{\sqrt{\epsilon\mu}} = \frac{w_p^{(0)}}{\sqrt{\epsilon\mu}}    
 \end{equation}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Отражение волны от нагрузки на конце ЛП(в терминах тока и напряжения). Формула пересчета импеданса. Понятие согласования линии с нагрузкой.}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = .6\linewidth]{img/12-2.pdf}    
+    \caption{}
+\end{figure}
+
+Импеданс нагрузки $Z_H = \frac{V_H}{I_H}$, где $V_H,I_H$ - напряжение и ток на нагрузке. Вообще говоря, импеданс $Z_H$
+может быть комплексным. Коэффициент отражения $\Gamma$ - отношение амплитуд отраженной волны к амплитуде пришедшей, в
+терминах напряжения:
+\begin{equation}
+    \Gamma = \frac{V_{r}}{V_{i}}    
+\end{equation}
+В общем виде напряжение и ток в ЛП записываются как суперпозиция:
+\begin{align*}
+    &V = V_i e^{-ikz}+V_re^{ikz}\\
+    &I = I_i e^{-ikz}+I_re^{ikz}
+\end{align*}
+Импеданс $Z(z)$ в данном сечении $z$ в произвольной волне:
+\begin{equation}
+    Z(z) = \frac{V(z)}{I(z)}
+\end{equation}
+Запишем импеданс $Z(z)$ через коэффициент отражения $\Gamma$:
+\begin{equation}
+    Z(z) = \frac{V_i e^{-ikz}+V_re^{ikz}}{I_i e^{-ikz}+I_re^{ikz}}   = \frac{V_i(e^{-ikz}+\Gamma e^{ikz})}{I_i(e^{-ikz}-\Gamma e^{ikz})}  
+\end{equation}
+Используя определения волнового сопротивления $Z_{\text{в}}$ в бегущей волне:
+\begin{equation}
+    Z_{\text{в}} = \frac{V_i}{I_i},~ \Gamma = \frac{V_{r}}{V_{i}} ,~ \frac{V_r}{I_r} = - Z_{\text{в}}
+\end{equation}
+Тогда (нагрузка расположена в $z=0$, а источник в $z=-L$):
+\begin{equation}
+    Z(0) = Z_H =  Z_{\text{в}}  \frac{1+\Gamma}{1-\Gamma}\Rightarrow 
+\end{equation}
+\begin{equation}
+    \Rightarrow \Gamma = \frac{Z_H - Z_{\text{в}}}{Z_H + Z_{\text{в}}}    
+\end{equation}
+Сделаем пересчет импеданса в произвольном сечении $z$:
+\begin{equation}
+    Z(z) = Z_{\text{в}}\frac{\cos (kz)(1+\Gamma)+i\sin(kz)(\Gamma-1)}{\cos (kz)(1-\Gamma)-i\sin(kz)(\Gamma+1)}
+\end{equation}
+И, наконец, получим \textbf{формулу пересчета импеданса}:
+\begin{equation}
+    Z(-L) =   Z_{\text{в}}\frac{Z_H+iZ_{\text{в}}\tg kL}{Z_{\text{в}}+iZ_H\tg kL}  
+\end{equation}
+Т.е. зная $Z_H$, мы можем найти $Z$ источника.
+
+\textbf{Согласование ЛП с нагрузкой}
+
+ЛП согласована с нагрузкой, если $\Gamma = 0$. Т.е. ничего не поступает обратно в источник, нет потерь:
+\begin{equation}
+    Z_H =Z_{\text{в}}
+\end{equation}

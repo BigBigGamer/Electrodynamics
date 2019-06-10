@@ -1,15 +1,38 @@
 \input{preamble/preamble.tex}
 \usepackage{cancel}
+\usepackage{pgf,tikz}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\newcommand{\incfigg}[2]{%
+    \def\svgwidth{#2\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+\pdfsuppresswarningpagegroup=1
 \begin{document}
 
 
 \textbf{Disclaimer}
 
 \tableofcontents
+<<<<<<< HEAD
 
 \foreach \x in {1,...,13}{
     \newpage \section{Билет \x}
     \input{tasks/task\x.tex}
 }
 
+=======
+\foreach \x in {1,...,13}{
+    \newpage\section{Билет \x}
+    \input{tasks/task\x.tex} 
+}
+>>>>>>> origin/Fedor
 \end{document}

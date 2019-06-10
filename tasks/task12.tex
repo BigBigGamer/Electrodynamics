@@ -1,4 +1,35 @@
 %!TEX root = ../Electrodynamics.tex
+\subsection{Общая постановка задачи о собственных электромагнитных колебаниях в полых резонаторах с идеально проводящими
+стенками. Действительность собственных частот идеального резонатора.}
 
-\subsection{}
-
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = .3\linewidth]{example-image-c}
+    \caption{}
+\end{figure}
+Рассматриваем любую металлическую полость произвольной формы. Для идеального проводника выполняются граничные условия на
+поверхности проводника $S$:
+\begin{equation}
+    E_{\tau}\big|_S = 0,~ H_n\big|_S = 0    
+\end{equation}
+Для собственных колебаний необходимо решить систему из уравнений Максвелла:
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        &\Rot{\vec{H}} = i\frac{w}{c}\epsilon \vec{E}\\
+        &\Rot{\vec{E}} = -i\frac{w}{c}\mu \vec{H}
+    \end{aligned}\right.    
+\end{equation}
+Возьмем ротор от второго уравнения, и подставим $\Rot{\vec{H}}$ из первого, получим:
+\begin{equation}
+    -\Rot{\Rot{\vec{E}}}+k^2\vec{E} = 0,~ k = \frac{w}{c}\sqrt{\mu\epsilon}    
+\end{equation}
+Необходмо решить
+\begin{equation}
+    \Delta \vec{E} +k^2 \vec{E} = 0, \text{ при условии}
+    \left\{
+    \begin{aligned}
+        &\Div{E} = 0\\
+        &E_{\tau}\big|_S = 0
+    \end{aligned}\right.    
+\end{equation}
